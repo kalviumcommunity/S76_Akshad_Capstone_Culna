@@ -165,3 +165,5 @@ Many people struggle with deciding what to cook using available ingredients. CLU
 ## License
 
 This project is open-source and available under the MIT License.
+
+This is my project plan
