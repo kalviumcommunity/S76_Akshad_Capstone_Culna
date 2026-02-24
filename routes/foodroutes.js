@@ -3,44 +3,42 @@ const router = express.Router();
 const Food = require("../models/Food");
 
 /*
-GET 1️⃣ - Get all food items
+POST 1️⃣ - Add new food item
 */
-router.get("/", async (req, res) => {
+router.post("/", async (req, res) => {
   try {
-    const foods = await Food.find();
-    res.status(200).json(foods);
+    const newFood = new Food(req.body);
+    const savedFood = await newFood.save();
+
+    res.status(201).json({
+      success: true,
+      message: "Food item created successfully",
+      data: savedFood
+    });
   } catch (error) {
-    res.status(500).json({ message: "Error fetching foods" });
+    res.status(400).json({
+      success: false,
+      message: "Error creating food item"
+    });
   }
 });
 
 /*
-GET 2️⃣ - Get food by ID
+POST 2️⃣ - Bulk add foods
 */
-router.get("/:id", async (req, res) => {
+router.post("/bulk", async (req, res) => {
   try {
-    const food = await Food.findById(req.params.id);
+    const foods = await Food.insertMany(req.body);
 
-    if (!food) {
-      return res.status(404).json({ message: "Food not found" });
-    }
-
-    res.status(200).json(food);
+    res.status(201).json({
+      success: true,
+      message: "Bulk food items added",
+      data: foods
+    });
   } catch (error) {
-    res.status(500).json({ message: "Invalid ID" });
-  }
-});
-
-/*
-GET 3️⃣ - Filter by category
-Example: /api/foods/category/veg
-*/
-router.get("/category/:category", async (req, res) => {
-  try {
-    const foods = await Food.find({ category: req.params.category });
-    res.status(200).json(foods);
-  } catch (error) {
-    res.status(500).json({ message: "Error filtering foods" });
+    res.status(400).json({
+      message: "Error in bulk insert"
+    });
   }
 });
 
