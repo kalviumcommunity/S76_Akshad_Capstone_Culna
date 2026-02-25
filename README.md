@@ -166,4 +166,8 @@ Many people struggle with deciding what to cook using available ingredients. CLU
 
 This project is open-source and available under the MIT License.
 
+This is my project plan
+
+
+Deplloyed backend Server: https://s76-akshad-capstone-culna.onrender.com
 This is my project plan.
