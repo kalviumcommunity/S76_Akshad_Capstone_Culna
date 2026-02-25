@@ -10,8 +10,9 @@ const foodSchema = new mongoose.Schema({
     required: true
   },
   category: {
-    type: String
+    type: String,
+    required: true
   }
-});
+}, { timestamps: true });
 
 module.exports = mongoose.model("Food", foodSchema);

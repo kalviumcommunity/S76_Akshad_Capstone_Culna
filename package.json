@@ -1,24 +1,17 @@
 {
-  "name": "s76_akshad_capstone_culna",
+  "name": "culna-backend",
   "version": "1.0.0",
-  "description": "CLUNA AI is an intelligent AI-powered recipe generator that creates personalized recipes based on user-provided ingredients, dietary preferences, and cuisine choices. The platform helps users reduce food waste and discover creative meal ideas instantly.",
-  "main": "index.js",
+  "description": "Culna Capstone Backend Server",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kalviumcommunity/S76_Akshad_Capstone_Culna.git"
-  },
-  "keywords": [],
-  "author": "",
+  "author": "Akshad",
   "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/kalviumcommunity/S76_Akshad_Capstone_Culna/issues"
-  },
-  "homepage": "https://github.com/kalviumcommunity/S76_Akshad_Capstone_Culna#readme",
   "dependencies": {
-    "express": "^5.2.1"
+    "express": "^4.18.2",
+    "mongoose": "^8.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.0"
   }
 }
