@@ -7,7 +7,7 @@ const cors = require("cors");
 require("dotenv").config();
 
 // Import Routes
-const foodRoutes = require("./routes/foodroutes");
+const foodRoutes = require("./routes/foodRoutes");
 
 // ==========================
 // INITIALIZE APP
