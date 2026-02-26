@@ -4,16 +4,21 @@ const foodSchema = new mongoose.Schema(
   {
     name: {
       type: String,
-      required: [true, "Food name is required"],
-      trim: true
+      required: true
     },
     price: {
       type: Number,
-      required: [true, "Price is required"],
-      min: 0
+      required: true
     },
     category: {
       type: String,
+      required: true
+    },
+
+    // 🔥 Relationship: Food belongs to a User
+    createdBy: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
       required: true
     }
   },
