@@ -14,16 +14,7 @@ const foodSchema = new mongoose.Schema(
     },
     category: {
       type: String,
-      required: true,
-      enum: ["veg", "non-veg", "dessert", "beverage"]
-    },
-    description: {
-      type: String,
-      maxlength: 300
-    },
-    available: {
-      type: Boolean,
-      default: true
+      required: true
     }
   },
   { timestamps: true }
